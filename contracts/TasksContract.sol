@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-contract TaskContract{
+contract TasksContract{
 
     uint taskCounter = 0;
 
@@ -20,7 +20,8 @@ contract TaskContract{
 
     function createTask(string memory _title , string memory _description) public
     {
-        tasks[1] = Task(taskCounter, _title, _description);    
+        tasks[taskCounter] = Task(taskCounter, _title, _description, false, block.timestamp);    
+        taskCounter++;
     }
     // function toggleDone(){}
 }
